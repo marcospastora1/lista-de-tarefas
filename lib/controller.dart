@@ -8,8 +8,8 @@ import 'package:path_provider/path_provider.dart';
 class HomeController extends GetxController {
   final toDoController = TextEditingController();
 
-  var toDoList = [].obs;
-  var lastRemoved = {}.obs;
+  final toDoList = [].obs;
+  final lastRemoved = {}.obs;
   int? lastRemovedPos;
 
   @override
@@ -50,7 +50,9 @@ class HomeController extends GetxController {
   Widget buildItem(BuildContext context, int index) {
     return Obx(
       () => Dismissible(
-        key: Key(DateTime.now().millisecondsSinceEpoch.toString()),
+        key: Key(
+          DateTime.now().millisecondsSinceEpoch.toString(),
+        ),
         background: Container(
           color: Colors.red,
           child: const Align(
